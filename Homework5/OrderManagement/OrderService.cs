@@ -196,7 +196,7 @@ namespace OrderManagement
                     orders.Sort((o1, o2) => o1.TotalPrice.CompareTo(o2.TotalPrice));//通过总价排序
                     ShowOrderInfo(); break;
                 case 3:
-                    orders.Sort((o1, o2) => int.Parse(o1.Ordertime.ToString()) - int.Parse(o2.Ordertime.ToString()));//通过创建时间排序
+                    orders.Sort((o1, o2) => DateTime.Compare(o1.Ordertime,o2.Ordertime));//通过创建时间排序
                     ShowOrderInfo(); break;
                 default:throw new Exception("无效的排序方式!");
             }
